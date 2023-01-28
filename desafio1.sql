@@ -67,7 +67,7 @@ CREATE TABLE SpotifyClone.seguindo_artista (
     ('Beyoncé'),
     ('Queen'),
     ('Elis Regina'),
-    ('Baco Exu Do Blues'),
+    ('Baco Exu do Blues'),
     ('Blind Guardian'),
     ('Nina Simone');
 
@@ -150,4 +150,3 @@ VALUES
     (7, 6),
     (9, 3),
     (10, 2);
-    
