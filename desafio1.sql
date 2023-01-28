@@ -4,13 +4,14 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 CREATE TABLE SpotifyClone.artista (
     artista_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nome_artista VARCHAR(100) NOT NULL
+    nome_artista VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE SpotifyClone.albuns (
     album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome_album VARCHAR(100) NOT NULL,
     artista_id INT NOT NULL,
+    ano_lancamento INT NOT NULL,
     FOREIGN KEY (artista_id)
         REFERENCES artista (artista_id)
 );
@@ -19,7 +20,6 @@ CREATE TABLE SpotifyClone.cancoes (
     cancao_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome_cancao VARCHAR(100) NOT NULL,
     duracao_segundos INT NOT NULL,
-    ano_lancamento INT NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
         REFERENCES albuns (album_id)
@@ -27,7 +27,7 @@ CREATE TABLE SpotifyClone.cancoes (
   
 CREATE TABLE SpotifyClone.plano (
     plano_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nome_plano VARCHAR(100) NOT NULL,
+    nome_plano VARCHAR(50) NOT NULL,
     valor_plano DECIMAL(3 , 2 ) NOT NULL
 );
   
@@ -71,29 +71,29 @@ CREATE TABLE SpotifyClone.seguindo_artista (
     ('Blind Guardian'),
     ('Nina Simone');
 
-  INSERT INTO SpotifyClone.albuns (nome_album, artista_id)
+  INSERT INTO SpotifyClone.albuns (nome_album, artista_id, ano_lancamento)
   VALUES
-    ('Renaissance', 1),
-    ('Jazz', 2),
-    ('Hot Space', 2),
-    ('Falso Brilhante', 3),
-    ('Vento de Maio', 3),
-    ('QVVJFA?', 4),
-    ('Somewhere Far Beyond', 5),
-    ('I Put A Spell On You', 6);
+    ('Renaissance', 1, 2022),
+    ('Jazz', 2, 1978),
+    ('Hot Space', 2, 1982),
+    ('Falso Brilhante', 3, 1998),
+    ('Vento de Maio', 3, 2001),
+    ('QVVJFA?', 4, 2003),
+    ('Somewhere Far Beyond', 5, 2007),
+    ('I Put A Spell On You', 6, 2012);
     
-INSERT INTO SpotifyClone.cancoes (nome_cancao, duracao_segundos, ano_lancamento, album_id)
+INSERT INTO SpotifyClone.cancoes (nome_cancao, duracao_segundos, album_id)
 VALUES
-    ('BREAK MY SOUL', 279, 2022, 1),
-    ('VIRGOS GROOVE', 369, 2022, 1),
-    ('ALIEN SUPERSTAR', 116, 2022, 1),
-    ('DONT STOP ME NOW', 203, 1978, 2),
-    ('UNDER PRESSURE', 152, 1982, 3),
-    ('COMO NOSSOS PAIS', 105, 1998, 4),
-    ('O MEDO DE AMAR É O MEDO DE SER LIVRE', 207, 2001, 5),
-    ('SAMBA EM PARIS', 267, 2003, 6),
-    ('THE BARDS SONG', 244, 2007, 7),
-    ('FEELING GOOD', 100, 2012, 8);
+    ('Break My Soul', 279, 1),
+    ('Virgos Groove', 369, 1),
+    ('Alien Superstar', 116, 1),
+    ('Dont Stop Me Now', 203, 2),
+    ('Under Pressure', 152, 3),
+    ('Como Nossos Pais', 105, 4),
+    ('O Medo De Amar é o Medo De Ser Livre', 207, 5),
+    ('Samba em Paris', 267, 6),
+    ('The Bards Song', 244, 7),
+    ('Feeling Good', 100, 8);
     
 INSERT INTO SpotifyClone.plano (nome_plano, valor_plano)
 VALUES
@@ -150,3 +150,4 @@ VALUES
     (7, 6),
     (9, 3),
     (10, 2);
+    
