@@ -85,14 +85,14 @@ CREATE TABLE SpotifyClone.seguindo_artista (
 INSERT INTO SpotifyClone.cancoes (nome_cancao, duracao_segundos, album_id)
 VALUES
     ('Break My Soul', 279, 1),
-    ('Virgos Groove', 369, 1),
-    ('Alien Superstar', 116, 1),
-    ('Dont Stop Me Now', 203, 2),
+    (`VIRGO'S GROOVE`, 369, 1),
+    ('ALIEN SUPERSTAR', 116, 1),
+    (`Don't Stop Me Now`, 203, 2),
     ('Under Pressure', 152, 3),
     ('Como Nossos Pais', 105, 4),
     ('O Medo De Amar é o Medo De Ser Livre', 207, 5),
     ('Samba em Paris', 267, 6),
-    ('The Bards Song', 244, 7),
+    (`The Bard's Song`, 244, 7),
     ('Feeling Good', 100, 8);
     
 INSERT INTO SpotifyClone.plano (nome_plano, valor_plano)
